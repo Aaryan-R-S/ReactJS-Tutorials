@@ -68,7 +68,7 @@ export default function Formpage(props) {
             </div>
             <div className="container my-3" style={{color: props.mode==="light"?"black":"white"}} >
                 <h3>Your Text summary</h3>
-                <p>{text.split(" ").filter((elem)=>{return elem.length!==0}).length} words, {text.split('').filter((elem)=>{return elem!==' '}).length} charaters</p>
+                <p>{text.split(/\s+/).filter((elem)=>{return elem.length!==0}).length} words, {text.split('').filter((elem)=>{return elem!==' '}).length} charaters</p>
                 <p>{0.008 * text.split(" ").filter((elem)=>{return elem.length!==0}).length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>{text.length>0 ? text:"Nothing to preview"}</p>

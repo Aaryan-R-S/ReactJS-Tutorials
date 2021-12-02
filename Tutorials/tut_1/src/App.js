@@ -27,23 +27,38 @@ function App() {
       }, 1500);
   }
 
-  const toggleMode = ()=>{
-    if(mode==='light'){
-      setMode("dark");
-      document.body.style.backgroundColor = "#303030"
-      showAlrtState("Dark mode has been enabled", "Success")
-      document.title = "TextUtils - Dark Mode";
-      setTimeout(() => {
-        document.title = "TextUtils - Home";
-      }, 2000);
-    }else{
-      setMode("light");
-      document.body.style.backgroundColor = "white"
-      showAlrtState("Light mode has been enabled", "Success")
-      document.title = "TextUtils - Light Mode";
-      setTimeout(() => {
-        document.title = "TextUtils - Home";
-      }, 2000);
+  const bodyRemoveClass = ()=>{
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("bg-warning");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-danger");
+    document.body.classList.remove("bg-primary");
+  }
+
+  const toggleMode = (bgclr=null)=>{
+    if(bgclr!=null){
+      bodyRemoveClass();
+      document.body.classList.add("bg-"+bgclr);
+    }
+    else{
+      if(mode==='light'){
+        setMode("dark");
+        document.body.style.backgroundColor = "#303030"
+        showAlrtState("Dark mode has been enabled", "Success")
+        document.title = "TextUtils - Dark Mode";
+        setTimeout(() => {
+          document.title = "TextUtils - Home";
+        }, 2000);
+      }else{
+        setMode("light");
+        document.body.style.backgroundColor = "white"
+        showAlrtState("Light mode has been enabled", "Success")
+        document.title = "TextUtils - Light Mode";
+        setTimeout(() => {
+          document.title = "TextUtils - Home";
+        }, 2000);
+      }
     }
   }
   {window.addEventListener("load", ()=>{
