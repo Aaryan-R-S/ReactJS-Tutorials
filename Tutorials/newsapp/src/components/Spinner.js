@@ -4,7 +4,7 @@ import loading from './loading.gif'
 export default class Spinner extends Component {
     render() {
         return (
-            <div className="text-center" style={{margin:"15%  0%"}}>
+            <div className="text-center" style={{margin:"5%  0%"}}>
                 <img src={loading} alt="loading..."/>
             </div>
         )
