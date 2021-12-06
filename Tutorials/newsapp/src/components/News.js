@@ -17,6 +17,9 @@ export default class News extends Component {
             category: this.props.category,
             apiKey: this.props.apiKey
         }
+        document.title = `${
+            this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)
+        } - News Monkey`
     }
 
     async updateNews(){
@@ -56,7 +59,10 @@ export default class News extends Component {
     render() {
         return (
             <div className="container my-3">
-                <h2 className="text-center">NewsMonkey - Top headlines</h2>
+                <h2 className="text-center">NewsMonkey - Top {
+                        this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)
+                    } Headlines
+                </h2>
                 {this.state.loading && <Spinner/>}
                 <div className="row">
                     {this.state.loading===false &&
