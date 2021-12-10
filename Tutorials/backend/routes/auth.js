@@ -102,5 +102,4 @@ router.post('/userDetails', fetchUser, async (req, res)=>{
     }
 })
 
-
 module.exports = router;
