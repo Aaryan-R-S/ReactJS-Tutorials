@@ -1,69 +1,82 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
 
-const NoteState = (props)=>{
-    const notesInitial = [
-        {
-          "_id": "61b307fd941885677025c832",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world! updated",
-          "description": "Yo hope it works updated",
-          "tag": "updated",
-          "date": "2021-12-10T07:55:41.648Z",
-          "__v": 0
-        },
-        {
-          "_id": "61b30be44da1b7b8353ba100",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world!",
-          "description": "Yo hope it works",
-          "tag": "General",
-          "date": "2021-12-10T08:12:20.635Z",
-          "__v": 0
-        },
-        {
-          "_id": "61b30c0f4da1b7b8353ba106",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world!",
-          "description": "Yo hope it works",
-          "tag": "General",
-          "date": "2021-12-10T08:13:03.942Z",
-          "__v": 0
-        },
-        {
-          "_id": "61b307fd941885677025c832",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world! updated",
-          "description": "Yo hope it works updated",
-          "tag": "updated",
-          "date": "2021-12-10T07:55:41.648Z",
-          "__v": 0
-        },
-        {
-          "_id": "61b30be44da1b7b8353ba100",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world!",
-          "description": "Yo hope it works",
-          "tag": "General",
-          "date": "2021-12-10T08:12:20.635Z",
-          "__v": 0
-        },
-        {
-          "_id": "61b30c0f4da1b7b8353ba106",
-          "user": "61b300e4fbff1e3235939fd5",
-          "title": "Hello, world!",
-          "description": "Yo hope it works",
-          "tag": "General",
-          "date": "2021-12-10T08:13:03.942Z",
-          "__v": 0
-        }
-    ]
-    const [notes, setNotes] = useState(notesInitial);
-    return(
-        <NoteContext.Provider value={{notes, setNotes}}>
-            {props.children}
-        </NoteContext.Provider>
-    )
+const NoteState = (props) => {
+  const url = "http://localhost:5000";
+  const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFiMzAwZTRmYmZmMWUzMjM1OTM5ZmQ1In0sImlhdCI6MTYzOTEyMTE4OX0.Ll5XcN_ThB5AuBfKaAqq-9N-W2S6A20ygQ2njenoBy0";
+
+  const [notesCxt, setNotesCxt] = useState([]);
+
+  const fetchNotesCxt = async ()=> {
+    const response = await fetch(`${url}/api/notes/fetchNotes`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': authToken
+      }
+    });
+    const initialNotes = await response.json();
+    console.log(initialNotes);
+    setNotesCxt(initialNotes);
+  }
+
+  const addNoteCxt = async (title, description, tag) => {
+    const response = await fetch(`${url}/api/notes/addNote`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": authToken
+      },
+      body: JSON.stringify({title, description, tag})
+    });
+    const addedNote = await response.json();
+    console.log(addedNote);
+    // fetchNotesCxt();
+    setNotesCxt(notesCxt.concat(addedNote));
+  }
+
+  const editNoteCxt = async (id, title, description, tag) => {
+    const response = await fetch(`${url}/api/notes/updateNote/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": authToken
+      },
+      body: JSON.stringify({title, description, tag})
+    });
+    const editedNote = await response.json();
+    console.log(editedNote);
+    // fetchNotesCxt();
+    for (let index = 0; index < notesCxt.length; index++) {
+      const element = notesCxt[index];
+      if (element._id === id) {
+        element.title = title;
+        element.description = description;
+        element.tag = tag;
+      }
+    }
+  }
+
+  const deleteNoteCxt = async (id) => {
+    const response = await fetch(`${url}/api/notes/deleteNote/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": authToken
+      },
+    });
+    const deletedNote = await response.json();
+    console.log(deletedNote);
+    // fetchNotesCxt();
+    let newNotes = notesCxt.filter((note) => { return note._id !== id });
+    setNotesCxt(newNotes);
+  }
+
+  return (
+    <NoteContext.Provider value={{ notesCxt, fetchNotesCxt, addNoteCxt, editNoteCxt, deleteNoteCxt }}>
+      {props.children}
+    </NoteContext.Provider>
+  )
 }
 
 export default NoteState;
