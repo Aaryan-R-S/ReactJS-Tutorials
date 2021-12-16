@@ -16,7 +16,7 @@ const NoteState = (props) => {
       }
     });
     const initialNotes = await response.json();
-    console.log(initialNotes);
+    // console.log(initialNotes);
     setNotesCxt(initialNotes);
   }
 
@@ -30,7 +30,7 @@ const NoteState = (props) => {
       body: JSON.stringify({title, description, tag})
     });
     const addedNote = await response.json();
-    console.log(addedNote);
+    // console.log(addedNote);
     // fetchNotesCxt();
     setNotesCxt(notesCxt.concat(addedNote));
   }
@@ -44,17 +44,22 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title, description, tag})
     });
-    const editedNote = await response.json();
-    console.log(editedNote);
+    await response.json();
+    // const editedNote = await response.json();
+    // console.log(editedNote);
     // fetchNotesCxt();
-    for (let index = 0; index < notesCxt.length; index++) {
-      const element = notesCxt[index];
-      if (element._id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
+
+    let newNotes = JSON.parse(JSON.stringify(notesCxt));
+
+    for (let index = 0; index < newNotes.length; index++) {
+      if (newNotes[index]._id === id) {
+        newNotes[index].title = title;
+        newNotes[index].description = description;
+        newNotes[index].tag = tag;
+        break;
       }
     }
+    setNotesCxt(newNotes);
   }
 
   const deleteNoteCxt = async (id) => {
@@ -65,8 +70,9 @@ const NoteState = (props) => {
         "auth-token": authToken
       },
     });
-    const deletedNote = await response.json();
-    console.log(deletedNote);
+    await response.json();
+    // const deletedNote = await response.json();
+    // console.log(deletedNote);
     // fetchNotesCxt();
     let newNotes = notesCxt.filter((note) => { return note._id !== id });
     setNotesCxt(newNotes);

@@ -14,7 +14,7 @@ export default function NoteItem(props) {
                     <h5 className="card-title">{props.note.title}</h5>
                     <div className="position-absolute end-0 mx-2">
                         <i className="fas fa-trash-alt mx-2" onClick={()=>{deleteNoteCxt(props.note._id)}}></i>
-                        <i className="fas fa-edit mx-2"></i>
+                        <i className="fas fa-edit mx-2" onClick={()=>{props.editNote(props.note)}}></i>
                     </div>
                 </div>
                 <p className="card-text">{props.note.description}</p>

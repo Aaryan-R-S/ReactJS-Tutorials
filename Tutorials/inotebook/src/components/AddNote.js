@@ -6,12 +6,12 @@ export default function AddNote() {
     const context = useContext(noteContext);
     const {addNoteCxt} = context;
 
-    const [note, setNote] = useState({title:"", description:"", tag:"General"});
+    const [note, setNote] = useState({title:"", description:"", tag:""});
 
     const clickedAddNoteBtn = (e)=>{
         e.preventDefault();
         document.getElementById('myform').reset();
-        addNoteCxt(note.title, note.description, note.tag);
+        addNoteCxt(note.title, note.description, (note.tag===""?"General":note.tag));
     }
 
     const onChange = (e)=>{
@@ -35,7 +35,7 @@ export default function AddNote() {
                     <label htmlFor="tag" className="form-label">Tag</label>
                     <input type="text" className="form-control" id="tag" name="tag" onChange={onChange}/>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={clickedAddNoteBtn}>Add</button>
+                <button disabled={note.title.length<3 || note.description.length<5} type="submit" className="btn btn-primary" onClick={clickedAddNoteBtn}>Add</button>
                 </form>
             </div>
         </div>
