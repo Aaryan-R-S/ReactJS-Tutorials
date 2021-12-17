@@ -2,13 +2,20 @@ import React from 'react'
 import noteContext from '../context/notes/noteContext';
 import { useContext, useEffect, useRef, useState } from 'react';
 import NoteItem from './NoteItem';
+import { useHistory } from 'react-router-dom'
 
 export default function Notes() {
     const context = useContext(noteContext);
     const {notesCxt, fetchNotesCxt, editNoteCxt} = context;
+    const history = useHistory();
 
     useEffect(() => {
-        fetchNotesCxt();
+        if(localStorage.getItem("iNotebookToken")){
+            fetchNotesCxt();
+        }
+        else{
+            history.push("/login");
+        }
         // eslint-disable-next-line
     }, [])
 

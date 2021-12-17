@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react'
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useHistory} from "react-router-dom";
 
 export default function Navbar() {
     let location = useLocation();    
     useEffect(()=>{
         // console.log(location);
     }, [location])
+
+    const history = useHistory();
+    const handleLogout = ()=>{
+        localStorage.removeItem("iNotebookToken");
+        history.push("/login");
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,10 +29,14 @@ export default function Navbar() {
                 <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} to="/about">About</Link>
                 </li>
             </ul>
-            <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            {!localStorage.getItem("iNotebookToken") ? 
+                <form className="d-flex">
+                    <Link className="btn btn-success mx-2" to="/login" role="button">Log In</Link>
+                    <Link className="btn btn-success mx-2" to="/signup" role="button">SignUp</Link>
+                </form>
+                :
+                <button className="btn btn-success mx-2" onClick={handleLogout}>Logout</button>
+            }
             </div>
         </div>
         </nav>
