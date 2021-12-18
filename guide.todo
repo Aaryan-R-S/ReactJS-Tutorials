@@ -9,3 +9,6 @@
     ☐ npm run start
     ☐ npm run build
     ☐ npm install react-router-dom@5.2.0
+    
+    // For Redux
+    ☐ npm i redux react-redux redux-thunk
