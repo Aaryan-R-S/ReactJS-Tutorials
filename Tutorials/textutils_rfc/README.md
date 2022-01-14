@@ -1,14 +1,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Aaryan-R-S/ReactJS-Tutorials/tree/master/Tutorials/newsapp_rcc_rfc">
+  <a href="https://github.com/Aaryan-R-S/ReactJS-Tutorials/tree/master/Tutorials/textutils_rfc">
     <img src="readme-images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">News App</h3>
+  <h3 align="center">TextUtils</h3>
 
   <p align="center">
-    An awesome project that can be added to your resume!
+    An awesome tool to improve your productivity!
     <br />
     <strong>Explore the docs »</strong>
     <br />
@@ -47,7 +47,7 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-This is an awesome news website developed using ReactJS and News API. It is mind relaxing and fun-playing that really suit my needs. I usually use this tool to relax myself to increase my productivity!
+This is a text utility tool developed using ReactJS and bootstrap. It is mind relaxing and fun-playing that really suit my needs. I usually use this tool to relax myself to increase my productivity!
 
 ### Built With
 
@@ -57,7 +57,6 @@ This is an awesome news website developed using ReactJS and News API. It is mind
 * [JavaScript](https://www.javascript.com/)
 * [Node.js](https://nodejs.org/en/)
 * [ReactJS](https://reactjs.org/docs/getting-started.html)
-* [News API](https://newsapi.org/)
 * [GitHub](https://github.com)
 
 

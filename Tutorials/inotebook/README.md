@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Aaryan-R-S/ReactJS-Tutorials/tree/master/Tutorials/inotebook">
+    <img src="readme-images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">iNotebook - eNotes</h3>
 
-## Available Scripts
+  <p align="center">
+    An awesome tool to improve your productivity!
+    <br />
+    <strong>Explore the docs »</strong>
+    <br />
+    <br />
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### `npm test`
+![Product Name Screen Shot][product-screenshot]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a text utility tool, MERN app, developed using MongoDB, Express, ReactJS and NodeJS. It is mind relaxing and fun-playing that really suit my needs. I usually use this tool to relax myself to increase my productivity!
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [HTML](https://www.w3schools.com/html/)
+* [CSS](https://www.w3schools.com/css/default.asp)
+* [Bootstrap](https://getbootstrap.com/)
+* [JavaScript](https://www.javascript.com/)
+* [Node.js](https://nodejs.org/en/)
+* [ReactJS](https://reactjs.org/docs/getting-started.html)
+* [Mongo DB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
+* [GitHub](https://github.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- GETTING STARTED -->
+## Getting Started
 
-### `npm run eject`
+To get a local copy up and running follow these simple steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. GitHub Account ([Sign Up](https://github.com))
+2. Basic understanding of JS (Tutorials: [English ](https://www.youtube.com/playlist?list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD)| [Hindi](https://youtu.be/hKB-YGF14SY))
+3. Knowledge of ReactJS (Tutorials: [Code with Harry](https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt))
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+- Clone the repo
+   ```sh
+   git clone https://github.com/Aaryan-R-S/ReactJS-Tutorials.git
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- ROADMAP -->
+## Roadmap
 
-### Code Splitting
+Clone the repo and open it in suitable IDE for complete project backend code. You can also fix the issues and hence contribute.
+- Run the react app
+   ```sh
+   npm run both
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<!-- CONTRIBUTING -->
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Making a Progressive Web App
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- LICENSE -->
+## License
 
-### Advanced Configuration
+Feel free to clone and modify according to your needs. But please give desirable CREDITS and STAR this repository!<br> Distributed under the MIT License. See `LICENSE` for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+<!-- CONTACT -->
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Email ID - aaryan20004@iiitd.ac.in
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [JS Playlist @Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL)
+* [ReactJS Playlist @Code with Harry](https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt)
+* [Best README Template](https://github.com/othneildrew/Best-README-Template)
+* [Flaticon](https://flaticon.com)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: readme-images/screenshot.png
